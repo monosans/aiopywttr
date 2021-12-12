@@ -1,0 +1,82 @@
+# -*- coding: utf-8 -*-
+import asyncio
+
+import pytest
+from aiohttp import ClientSession
+
+import aiopywttr
+
+
+@pytest.mark.asyncio()
+async def test_validation() -> None:
+    location = "New York"
+    async with ClientSession() as session:
+        await asyncio.gather(
+            aiopywttr.en.get_forecast(location),
+            aiopywttr.af.get_forecast(location, session=session),
+            aiopywttr.am.get_forecast(location, session=session),
+            aiopywttr.ar.get_forecast(location, session=session),
+            aiopywttr.az.get_forecast(location, session=session),
+            aiopywttr.be.get_forecast(location, session=session),
+            aiopywttr.bg.get_forecast(location, session=session),
+            aiopywttr.bn.get_forecast(location, session=session),
+            aiopywttr.bs.get_forecast(location, session=session),
+            aiopywttr.ca.get_forecast(location, session=session),
+            aiopywttr.cs.get_forecast(location, session=session),
+            aiopywttr.cy.get_forecast(location, session=session),
+            aiopywttr.da.get_forecast(location, session=session),
+            aiopywttr.de.get_forecast(location, session=session),
+            aiopywttr.el.get_forecast(location, session=session),
+            aiopywttr.eo.get_forecast(location, session=session),
+            aiopywttr.es.get_forecast(location, session=session),
+            aiopywttr.et.get_forecast(location, session=session),
+            aiopywttr.eu.get_forecast(location, session=session),
+            aiopywttr.fa.get_forecast(location, session=session),
+            aiopywttr.fi.get_forecast(location, session=session),
+            aiopywttr.fr.get_forecast(location, session=session),
+            aiopywttr.fy.get_forecast(location, session=session),
+            aiopywttr.ga.get_forecast(location, session=session),
+            aiopywttr.he.get_forecast(location, session=session),
+            aiopywttr.hi.get_forecast(location, session=session),
+            aiopywttr.hr.get_forecast(location, session=session),
+            aiopywttr.hu.get_forecast(location, session=session),
+            aiopywttr.hy.get_forecast(location, session=session),
+            aiopywttr.ia.get_forecast(location, session=session),
+            aiopywttr.id.get_forecast(location, session=session),
+            aiopywttr.is_.get_forecast(location, session=session),
+            aiopywttr.it.get_forecast(location, session=session),
+            aiopywttr.ja.get_forecast(location, session=session),
+            aiopywttr.jv.get_forecast(location, session=session),
+            aiopywttr.kk.get_forecast(location, session=session),
+            aiopywttr.ko.get_forecast(location, session=session),
+            aiopywttr.lt.get_forecast(location, session=session),
+            aiopywttr.lv.get_forecast(location, session=session),
+            aiopywttr.mg.get_forecast(location, session=session),
+            aiopywttr.mk.get_forecast(location, session=session),
+            aiopywttr.mr.get_forecast(location, session=session),
+            aiopywttr.nb.get_forecast(location, session=session),
+            aiopywttr.nl.get_forecast(location, session=session),
+            aiopywttr.nn.get_forecast(location, session=session),
+            aiopywttr.oc.get_forecast(location, session=session),
+            aiopywttr.pl.get_forecast(location, session=session),
+            aiopywttr.pt_br.get_forecast(location, session=session),
+            aiopywttr.pt.get_forecast(location, session=session),
+            aiopywttr.ro.get_forecast(location, session=session),
+            aiopywttr.ru.get_forecast(location, session=session),
+            aiopywttr.sk.get_forecast(location, session=session),
+            aiopywttr.sl.get_forecast(location, session=session),
+            aiopywttr.sr_lat.get_forecast(location, session=session),
+            aiopywttr.sr.get_forecast(location, session=session),
+            aiopywttr.sv.get_forecast(location, session=session),
+            aiopywttr.ta.get_forecast(location, session=session),
+            aiopywttr.te.get_forecast(location, session=session),
+            aiopywttr.th.get_forecast(location, session=session),
+            aiopywttr.tr.get_forecast(location, session=session),
+            aiopywttr.uk.get_forecast(location, session=session),
+            aiopywttr.uz.get_forecast(location, session=session),
+            aiopywttr.vi.get_forecast(location, session=session),
+            aiopywttr.zh_cn.get_forecast(location, session=session),
+            aiopywttr.zh_tw.get_forecast(location, session=session),
+            aiopywttr.zh.get_forecast(location, session=session),
+            aiopywttr.zu.get_forecast(location, session=session),
+        )
