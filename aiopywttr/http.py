@@ -9,6 +9,7 @@ async def _fetch(location: str, session: _ClientSession, lang: str) -> _Any:
     async with session.get(
         f"https://wttr.in/{location}", params={"format": "j1", "lang": lang}
     ) as r:
+        r.raise_for_status()
         return await r.json()
 
 
