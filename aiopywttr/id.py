@@ -10,6 +10,6 @@ from aiopywttr.http import get_json as _get_json
 async def get_forecast(
     location: str, *, session: _Optional[_ClientSession] = None
 ) -> _pywttr_models.id.Model:
-    return _pywttr_models.id.Model(
-        **(await _get_json(location, session, "id"))
+    return _pywttr_models.id.Model.parse_obj(
+        await _get_json(location, session, "id")
     )
