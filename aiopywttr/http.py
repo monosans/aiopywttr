@@ -17,7 +17,7 @@ async def _fetch(location: str, session: _ClientSession, lang: str) -> _Any:
 async def get_json(
     location: str, session: _Optional[_ClientSession], lang: str
 ) -> _Any:
-    if session:
+    if isinstance(session, _ClientSession) and not session.closed:
         return await _fetch(location, session, lang)
     async with _ClientSession() as session:
         return await _fetch(location, session, lang)
