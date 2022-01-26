@@ -7,9 +7,10 @@ from aiohttp import ClientSession as _ClientSession
 
 async def _fetch(location: str, session: _ClientSession, lang: str) -> _Any:
     async with session.get(
-        f"https://wttr.in/{location}", params={"format": "j1", "lang": lang}
+        f"https://wttr.in/{location}",
+        params={"format": "j1", "lang": lang},
+        raise_for_status=True,
     ) as r:
-        r.raise_for_status()
         return await r.json()
 
 
