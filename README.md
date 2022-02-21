@@ -22,26 +22,27 @@ This example prints the average temperature in New York today.
 ```python
 import asyncio
 
-import aiopywttr
+from aiopywttr import Wttr
 
 
 async def main():
-    forecast = await aiopywttr.en.get_forecast("New York")
+    wttr = Wttr("New York")
+    forecast = await wttr.en()
     print(forecast.weather[0].avgtemp_c)
 
 
 asyncio.run(main())
 ```
 
-Other languages may also be used instead of `en`. For a complete list of supported languages, see the [file names](https://github.com/monosans/aiopywttr/tree/main/aiopywttr) or follow the code completion in your IDE.
+Other languages may also be used instead of `en`. For a complete list of supported languages, follow the code completion in your IDE.
 
 ## Documentation
 
 For an example of type annotations, see `pywttr-models` [README.md](https://github.com/monosans/pywttr-models#usage-for-type-annotation).
 
-There is no documentation, just follow the code completion from your IDE.
+There is no documentation, just follow the code completion in your IDE.
 
-Recommended IDEs:
+## Recommended IDEs
 
 - [Visual Studio Code](https://code.visualstudio.com) (with [Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python))
 - [PyCharm](https://jetbrains.com/pycharm)

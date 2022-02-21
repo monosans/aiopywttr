@@ -2,11 +2,11 @@
 import pytest
 from aiohttp.client_exceptions import ClientResponseError
 
-import aiopywttr
+from aiopywttr import Wttr
 
 
 @pytest.mark.asyncio()
-async def test_validation() -> None:
-    location = "sdlaghdsaklgthj"
+async def test_exception() -> None:
+    wttr = Wttr("sdlaghdsaklgthj")
     with pytest.raises(ClientResponseError):
-        await aiopywttr.en.get_forecast(location)
+        await wttr.en()
