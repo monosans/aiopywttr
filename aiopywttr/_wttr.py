@@ -8,6 +8,8 @@ from aiohttp import ClientSession
 class Wttr:
     """Asynchronous wrapper for wttr.in weather forecast."""
 
+    __slots__ = ("location", "session")
+
     def __init__(
         self, location: str, *, session: Optional[ClientSession] = None
     ) -> None:
