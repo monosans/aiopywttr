@@ -1,12 +1,10 @@
 import asyncio
 
-import pytest
 from aiohttp import ClientSession
 
 from aiopywttr import Wttr
 
 
-@pytest.mark.asyncio()
 async def test_validation() -> None:
     async with ClientSession() as session:
         wttr = Wttr("Paris", session=session)
