@@ -21,7 +21,7 @@ pydantic = "^1.9"
 pywttr-models = "^1.0"
 
 [tool.poetry.dev-dependencies]
-black = "^22.3"
+black = "^22.6"
 isort = "^5.10"
 mypy = "^0.961"
 pre-commit = "^2.19"
