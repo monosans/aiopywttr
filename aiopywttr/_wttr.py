@@ -7,7 +7,7 @@ from aiohttp import ClientSession
 
 
 class Wttr:
-    """Asynchronous wrapper for wttr.in weather forecast."""
+    """Asynchronous wrapper for wttr.in weather forecast API."""
 
     __slots__ = ("location", "session")
 
