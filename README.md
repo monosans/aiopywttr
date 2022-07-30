@@ -1,6 +1,7 @@
 # aiopywttr
 
-[![Build Status](https://github.com/monosans/aiopywttr/workflows/test/badge.svg?branch=main&event=push)](https://github.com/monosans/aiopywttr/actions?query=workflow%3Atest)
+[![test](https://github.com/monosans/aiopywttr/actions/workflows/test.yml/badge.svg?branch=main&event=push)](https://github.com/monosans/aiopywttr/actions/workflows/test.yml)
+[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/monosans/aiopywttr/main.svg)](https://results.pre-commit.ci/latest/github/monosans/aiopywttr/main)
 [![codecov](https://codecov.io/gh/monosans/aiopywttr/branch/main/graph/badge.svg)](https://codecov.io/gh/monosans/aiopywttr)
 
 Asynchronous wrapper for [wttr.in](https://wttr.in) weather forecast API.
