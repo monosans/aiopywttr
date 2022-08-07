@@ -6,6 +6,7 @@ import pywttr_models
 from aiohttp import ClientSession
 
 
+# pylint: disable-next=too-many-public-methods
 class Wttr:
     """Asynchronous wrapper for wttr.in weather forecast API."""
 
@@ -17,6 +18,7 @@ class Wttr:
         self.location = location
         self.session = session
 
+    # pylint: disable=invalid-name
     async def af(self) -> pywttr_models.af.Model:
         return pywttr_models.af.Model.parse_obj(await self._get_json("af"))
 
@@ -125,13 +127,14 @@ class Wttr:
             await self._get_json("zh-tw")
         )
 
+    # pylint: enable=invalid-name
     async def _fetch(self, lang: str, session: ClientSession) -> Any:
         async with session.get(
             f"https://wttr.in/{self.location}",
             params={"format": "j1", "lang": lang},
             raise_for_status=True,
-        ) as r:
-            return await r.json()
+        ) as response:
+            return await response.json()
 
     async def _get_json(self, lang: str) -> Any:
         if isinstance(self.session, ClientSession) and not self.session.closed:
