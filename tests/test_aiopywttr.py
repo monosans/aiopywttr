@@ -7,9 +7,11 @@ from aiohttp import ClientSession
 from aiopywttr import Wttr
 
 
-async def test_validation() -> None:
+async def test_aiopywttr() -> None:
+    wttr = Wttr("Paris")
+    await wttr.en()
     async with ClientSession() as session:
-        wttr = Wttr("Paris", session=session)
+        wttr.session = session
         await asyncio.gather(
             wttr.af(),
             wttr.am(),
@@ -23,6 +25,7 @@ async def test_validation() -> None:
             wttr.et(),
             wttr.fa(),
             wttr.fr(),
+            wttr.gl(),
             wttr.hi(),
             wttr.hu(),
             wttr.ia(),
