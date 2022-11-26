@@ -48,8 +48,8 @@ repos:
         additional_dependencies:
           - aiohttp>=3.8,<4
           - pydantic>=1.9,<2
-          - pywttr-models>=1.0,<2
-          - pytest>=7.1,<8
+          - pywttr-models>=1.1,<2
+          - pytest>=7.2,<8
 
   - repo: local
     hooks:
