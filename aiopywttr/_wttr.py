@@ -58,6 +58,9 @@ class Wttr:
     async def fr(self) -> pywttr_models.fr.Model:
         return pywttr_models.fr.Model.parse_obj(await self._get_json("fr"))
 
+    async def gl(self) -> pywttr_models.gl.Model:
+        return pywttr_models.gl.Model.parse_obj(await self._get_json("gl"))
+
     async def hi(self) -> pywttr_models.hi.Model:
         return pywttr_models.hi.Model.parse_obj(await self._get_json("hi"))
 
