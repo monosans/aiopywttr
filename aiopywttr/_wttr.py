@@ -6,19 +6,15 @@ import pywttr_models
 from aiohttp import ClientSession
 
 
-# pylint: disable-next=too-many-public-methods
 class Wttr:
     """Asynchronous wrapper for wttr.in weather forecast API."""
 
     __slots__ = ("location", "session")
 
-    def __init__(
-        self, location: str, session: Optional[ClientSession] = None
-    ) -> None:
+    def __init__(self, location: str, session: Optional[ClientSession] = None) -> None:
         self.location = location
         self.session = session
 
-    # pylint: disable=invalid-name
     async def af(self) -> pywttr_models.af.Model:
         return pywttr_models.af.Model.parse_obj(await self._get_json("af"))
 
@@ -70,7 +66,7 @@ class Wttr:
     async def ia(self) -> pywttr_models.ia.Model:
         return pywttr_models.ia.Model.parse_obj(await self._get_json("ia"))
 
-    async def id(self) -> pywttr_models.id.Model:
+    async def id(self) -> pywttr_models.id.Model:  # noqa: A003
         return pywttr_models.id.Model.parse_obj(await self._get_json("id"))
 
     async def it(self) -> pywttr_models.it.Model:
@@ -95,9 +91,7 @@ class Wttr:
         return pywttr_models.pl.Model.parse_obj(await self._get_json("pl"))
 
     async def pt_br(self) -> pywttr_models.pt_br.Model:
-        return pywttr_models.pt_br.Model.parse_obj(
-            await self._get_json("pt-br")
-        )
+        return pywttr_models.pt_br.Model.parse_obj(await self._get_json("pt-br"))
 
     async def ro(self) -> pywttr_models.ro.Model:
         return pywttr_models.ro.Model.parse_obj(await self._get_json("ro"))
@@ -121,16 +115,11 @@ class Wttr:
         return pywttr_models.vi.Model.parse_obj(await self._get_json("vi"))
 
     async def zh_cn(self) -> pywttr_models.zh_cn.Model:
-        return pywttr_models.zh_cn.Model.parse_obj(
-            await self._get_json("zh-cn")
-        )
+        return pywttr_models.zh_cn.Model.parse_obj(await self._get_json("zh-cn"))
 
     async def zh_tw(self) -> pywttr_models.zh_tw.Model:
-        return pywttr_models.zh_tw.Model.parse_obj(
-            await self._get_json("zh-tw")
-        )
+        return pywttr_models.zh_tw.Model.parse_obj(await self._get_json("zh-tw"))
 
-    # pylint: enable=invalid-name
     async def _fetch(self, lang: str, session: ClientSession) -> Any:
         async with session.get(
             f"https://wttr.in/{self.location}",
