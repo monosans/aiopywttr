@@ -2,8 +2,8 @@
 
 [![CI](https://github.com/monosans/aiopywttr/actions/workflows/ci.yml/badge.svg?branch=main&event=push)](https://github.com/monosans/aiopywttr/actions/workflows/ci.yml?query=event%3Apush+branch%3Amain)
 [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/monosans/aiopywttr/main.svg)](https://results.pre-commit.ci/latest/github/monosans/aiopywttr/main)
-[![Coverage](https://img.shields.io/codecov/c/github/monosans/aiopywttr/main)](https://codecov.io/gh/monosans/aiopywttr)
-[![PyPI Downloads](https://img.shields.io/pypi/dm/aiopywttr)](https://pypi.org/project/aiopywttr/)
+[![Coverage](https://img.shields.io/codecov/c/github/monosans/aiopywttr/main?logo=codecov)](https://codecov.io/gh/monosans/aiopywttr)
+[![PyPI Downloads](https://img.shields.io/pypi/dm/aiopywttr?logo=pypi)](https://pypi.org/project/aiopywttr/)
 
 Asynchronous wrapper for [wttr.in](https://wttr.in) weather forecast API.
 
