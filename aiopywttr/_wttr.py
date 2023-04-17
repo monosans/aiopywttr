@@ -3,7 +3,7 @@ from __future__ import annotations
 from typing import Any, Optional
 
 import pywttr_models
-from aiohttp import ClientSession
+from aiohttp import ClientResponse, ClientSession
 
 
 class Wttr:
@@ -120,16 +120,19 @@ class Wttr:
     async def zh_tw(self) -> pywttr_models.zh_tw.Model:
         return pywttr_models.zh_tw.Model.parse_obj(await self._get_json("zh-tw"))
 
-    async def _fetch(self, lang: str, session: ClientSession) -> Any:
+    async def _get_json(self, lang: str) -> Any:
+        if isinstance(self.session, ClientSession) and not self.session.closed:
+            response = await self._fetch(lang, self.session)
+        else:
+            async with ClientSession() as session:
+                response = await self._fetch(lang, session)
+        return await response.json()
+
+    async def _fetch(self, lang: str, session: ClientSession) -> ClientResponse:
         async with session.get(
             f"https://wttr.in/{self.location}",
             params={"format": "j1", "lang": lang},
             raise_for_status=True,
         ) as response:
-            return await response.json()
-
-    async def _get_json(self, lang: str) -> Any:
-        if isinstance(self.session, ClientSession) and not self.session.closed:
-            return await self._fetch(lang, self.session)
-        async with ClientSession() as session:
-            return await self._fetch(lang, session)
+            await response.read()
+        return response
