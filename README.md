@@ -12,7 +12,7 @@ Synchronous version [here](https://github.com/monosans/pywttr).
 ## Installation
 
 ```bash
-python -m pip install aiopywttr
+python -m pip install -U aiopywttr pywttr-models
 ```
 
 ## Example
