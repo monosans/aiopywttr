@@ -4,11 +4,11 @@ import asyncio
 
 from aiohttp import ClientSession
 
-from aiopywttr import Wttr
+import aiopywttr
 
 
 async def test_aiopywttr() -> None:
-    wttr = Wttr("Paris")
+    wttr = aiopywttr.Wttr("Paris")
     await wttr.en()
     async with ClientSession() as session:
         wttr.session = session
