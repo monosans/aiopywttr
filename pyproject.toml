@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "aiopywttr"
-version = "2.1.0"
+version = "2.2.0"
 description = "Asynchronous wrapper for wttr.in API"
 authors = ["monosans <hsyqixco@protonmail.com>"]
 license = "MIT"
