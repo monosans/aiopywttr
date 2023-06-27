@@ -11,7 +11,9 @@ class Wttr:
 
     __slots__ = ("location", "session")
 
-    def __init__(self, location: str, session: Optional[ClientSession] = None) -> None:
+    def __init__(
+        self, location: str, session: Optional[ClientSession] = None
+    ) -> None:
         self.location = location
         self.session = session
 
@@ -91,7 +93,9 @@ class Wttr:
         return pywttr_models.pl.Model.parse_obj(await self._get_json("pl"))
 
     async def pt_br(self) -> pywttr_models.pt_br.Model:
-        return pywttr_models.pt_br.Model.parse_obj(await self._get_json("pt-br"))
+        return pywttr_models.pt_br.Model.parse_obj(
+            await self._get_json("pt-br")
+        )
 
     async def ro(self) -> pywttr_models.ro.Model:
         return pywttr_models.ro.Model.parse_obj(await self._get_json("ro"))
@@ -115,10 +119,14 @@ class Wttr:
         return pywttr_models.vi.Model.parse_obj(await self._get_json("vi"))
 
     async def zh_cn(self) -> pywttr_models.zh_cn.Model:
-        return pywttr_models.zh_cn.Model.parse_obj(await self._get_json("zh-cn"))
+        return pywttr_models.zh_cn.Model.parse_obj(
+            await self._get_json("zh-cn")
+        )
 
     async def zh_tw(self) -> pywttr_models.zh_tw.Model:
-        return pywttr_models.zh_tw.Model.parse_obj(await self._get_json("zh-tw"))
+        return pywttr_models.zh_tw.Model.parse_obj(
+            await self._get_json("zh-tw")
+        )
 
     async def _get_json(self, lang: str) -> Any:
         if isinstance(self.session, ClientSession) and not self.session.closed:
