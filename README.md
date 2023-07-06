@@ -13,32 +13,9 @@ Synchronous version [here](https://github.com/monosans/pywttr).
 python -m pip install -U aiopywttr pywttr-models
 ```
 
-## Example
-
-This example prints the average temperature in New York today.
-
-```python
-import asyncio
-
-import aiopywttr
-
-
-async def main():
-    wttr = aiopywttr.Wttr("New York")
-    forecast = await wttr.en()
-    print(forecast.weather[0].avgtemp_c)
-
-
-asyncio.run(main())
-```
-
-Other languages may also be used instead of `en`. For a complete list of supported languages, follow the code completion in your IDE.
-
 ## Documentation
 
-There is no documentation, just follow the example and code completion in your IDE.
-
-All types of objects returned by the wttr.in API are in the `aiopywttr.models` package.
+<https://aiopywttr.readthedocs.io/>
 
 ## License
 

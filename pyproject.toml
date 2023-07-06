@@ -6,6 +6,7 @@ authors = ["monosans <hsyqixco@protonmail.com>"]
 license = "MIT"
 readme = "README.md"
 repository = "https://github.com/monosans/aiopywttr"
+documentation = "https://aiopywttr.readthedocs.io/"
 keywords = ["forecast", "weather"]
 classifiers = [
     "Environment :: Web Environment",
