@@ -13,18 +13,18 @@ class Wttr:
         Prints the average temperature in New York today:
 
         ```python
-        >>> import asyncio
-        >>>
-        >>> import aiopywttr
-        >>>
-        >>>
-        >>> async def main():
-        ...     wttr = aiopywttr.Wttr("New York")
-        ...     forecast = await wttr.en()
-        ...     print(forecast.weather[0].avgtemp_c)
-        >>>
-        >>>
-        >>> asyncio.run(main())
+        import asyncio
+
+        import aiopywttr
+
+
+        async def main():
+            wttr = aiopywttr.Wttr("New York")
+            forecast = await wttr.en()
+            print(forecast.weather[0].avgtemp_c)
+
+
+        asyncio.run(main())
         ```
     """
 
