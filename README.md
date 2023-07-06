@@ -40,11 +40,6 @@ There is no documentation, just follow the example and code completion in your I
 
 All types of objects returned by the wttr.in API are in the `aiopywttr.models` package.
 
-## Recommended IDEs
-
-- [Visual Studio Code](https://code.visualstudio.com) (with [Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python))
-- [PyCharm](https://jetbrains.com/pycharm)
-
 ## License
 
 [MIT](https://github.com/monosans/aiopywttr/blob/main/LICENSE)
