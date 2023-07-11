@@ -1,4 +1,4 @@
-# aiopywttr
+# Home
 
 Welcome to the documentation of aiopywttr, the asynchronous wrapper for the [wttr.in](https://wttr.in) weather forecast API!
 
