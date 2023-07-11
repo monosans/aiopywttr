@@ -15,7 +15,7 @@ python -m pip install -U aiopywttr pywttr-models
 
 ## Documentation
 
-<https://aiopywttr.readthedocs.io/>
+<https://aiopywttr.readthedocs.io>
 
 ## License
 
