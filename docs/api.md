@@ -1,3 +1,3 @@
-# API Reference for aiopywttr
+# API Reference
 
 ::: aiopywttr
