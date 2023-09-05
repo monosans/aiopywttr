@@ -2,6 +2,10 @@
 
 [Semantic Versioning](https://semver.org/)
 
+## [2.3.0]
+
+- Add a new more flexible and simpler API consisting of `aiopywttr.get_weather` function and `aiopywttr.Language` enum. The old `aiopywttr.Wttr` API still works, but is marked deprecated.
+
 ## [2.2.2] - 2023-07-08
 
 - Lower minimum required Python version from 3.7.2 to 3.7.
