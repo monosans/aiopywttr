@@ -5,6 +5,10 @@ from aiohttp import ClientSession
 
 import aiopywttr
 
+pytestmark = pytest.mark.filterwarnings(
+    "ignore::aiopywttr.WttrClassDeprecationWarning"
+)
+
 
 @pytest.mark.parametrize("language", aiopywttr.Language)
 async def test_wttr(

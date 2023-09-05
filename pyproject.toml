@@ -95,7 +95,6 @@ warn_untyped_fields = true
 [tool.pytest.ini_options]
 addopts = ["--strict-config", "--strict-markers"]
 asyncio_mode = "auto"
-filterwarnings = ["ignore::aiopywttr.WttrClassDeprecationWarning"]
 xfail_strict = true
 
 [tool.ruff]
