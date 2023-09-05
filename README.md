@@ -3,7 +3,7 @@
 [![CI](https://github.com/monosans/aiopywttr/actions/workflows/ci.yml/badge.svg)](https://github.com/monosans/aiopywttr/actions/workflows/ci.yml)
 [![Downloads](https://static.pepy.tech/badge/aiopywttr)](https://pepy.tech/project/aiopywttr)
 
-Asynchronous wrapper for [wttr.in](https://wttr.in) weather forecast API.
+Asynchronous wrapper for [wttr.in](https://wttr.in) weather API.
 
 Synchronous version [here](https://github.com/monosans/pywttr).
 
