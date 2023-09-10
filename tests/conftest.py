@@ -5,11 +5,7 @@ from typing import AsyncIterator, Iterator
 
 import pytest
 from aiohttp import ClientSession
-
-try:
-    from pydantic.v1 import BaseConfig, Extra
-except ImportError:  # pragma: no cover
-    from pydantic import BaseConfig, Extra  # type: ignore[assignment]
+from pydantic.v1 import BaseConfig, Extra
 
 
 @pytest.fixture(scope="session")
@@ -20,14 +16,14 @@ def event_loop() -> Iterator[asyncio.AbstractEventLoop]:
 
 
 @pytest.fixture(scope="session")
-def location() -> str:
-    return "Paris"
-
-
-@pytest.fixture(scope="session")
 async def http_session() -> AsyncIterator[ClientSession]:
     async with ClientSession() as s:
         yield s
+
+
+@pytest.fixture()
+def location() -> str:
+    return "Paris"
 
 
 @pytest.fixture(autouse=True)
