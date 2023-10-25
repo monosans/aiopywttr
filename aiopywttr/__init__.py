@@ -21,7 +21,6 @@ Examples:
     asyncio.run(main())
     ```
 """
-
 from __future__ import annotations
 
 import pywttr_models as models
