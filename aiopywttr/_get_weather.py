@@ -16,8 +16,7 @@ async def get_weather(
     language: Literal[Language.AF],
     *,
     session: Optional[ClientSession] = ...,
-) -> pywttr_models.af.Model:
-    ...
+) -> pywttr_models.af.Model: ...
 
 
 @overload
@@ -26,8 +25,7 @@ async def get_weather(
     language: Literal[Language.AM],
     *,
     session: Optional[ClientSession] = ...,
-) -> pywttr_models.am.Model:
-    ...
+) -> pywttr_models.am.Model: ...
 
 
 @overload
@@ -36,8 +34,7 @@ async def get_weather(
     language: Literal[Language.AR],
     *,
     session: Optional[ClientSession] = ...,
-) -> pywttr_models.ar.Model:
-    ...
+) -> pywttr_models.ar.Model: ...
 
 
 @overload
@@ -46,8 +43,7 @@ async def get_weather(
     language: Literal[Language.BE],
     *,
     session: Optional[ClientSession] = ...,
-) -> pywttr_models.be.Model:
-    ...
+) -> pywttr_models.be.Model: ...
 
 
 @overload
@@ -56,8 +52,7 @@ async def get_weather(
     language: Literal[Language.BN],
     *,
     session: Optional[ClientSession] = ...,
-) -> pywttr_models.bn.Model:
-    ...
+) -> pywttr_models.bn.Model: ...
 
 
 @overload
@@ -66,8 +61,7 @@ async def get_weather(
     language: Literal[Language.CA],
     *,
     session: Optional[ClientSession] = ...,
-) -> pywttr_models.ca.Model:
-    ...
+) -> pywttr_models.ca.Model: ...
 
 
 @overload
@@ -76,8 +70,7 @@ async def get_weather(
     language: Literal[Language.DA],
     *,
     session: Optional[ClientSession] = ...,
-) -> pywttr_models.da.Model:
-    ...
+) -> pywttr_models.da.Model: ...
 
 
 @overload
@@ -86,8 +79,7 @@ async def get_weather(
     language: Literal[Language.DE],
     *,
     session: Optional[ClientSession] = ...,
-) -> pywttr_models.de.Model:
-    ...
+) -> pywttr_models.de.Model: ...
 
 
 @overload
@@ -96,8 +88,7 @@ async def get_weather(
     language: Literal[Language.EL],
     *,
     session: Optional[ClientSession] = ...,
-) -> pywttr_models.el.Model:
-    ...
+) -> pywttr_models.el.Model: ...
 
 
 @overload
@@ -106,8 +97,7 @@ async def get_weather(
     language: Literal[Language.EN] = ...,
     *,
     session: Optional[ClientSession] = ...,
-) -> pywttr_models.en.Model:
-    ...
+) -> pywttr_models.en.Model: ...
 
 
 @overload
@@ -116,8 +106,7 @@ async def get_weather(
     language: Literal[Language.ET],
     *,
     session: Optional[ClientSession] = ...,
-) -> pywttr_models.et.Model:
-    ...
+) -> pywttr_models.et.Model: ...
 
 
 @overload
@@ -126,8 +115,7 @@ async def get_weather(
     language: Literal[Language.FA],
     *,
     session: Optional[ClientSession] = ...,
-) -> pywttr_models.fa.Model:
-    ...
+) -> pywttr_models.fa.Model: ...
 
 
 @overload
@@ -136,8 +124,7 @@ async def get_weather(
     language: Literal[Language.FR],
     *,
     session: Optional[ClientSession] = ...,
-) -> pywttr_models.fr.Model:
-    ...
+) -> pywttr_models.fr.Model: ...
 
 
 @overload
@@ -146,8 +133,7 @@ async def get_weather(
     language: Literal[Language.GL],
     *,
     session: Optional[ClientSession] = ...,
-) -> pywttr_models.gl.Model:
-    ...
+) -> pywttr_models.gl.Model: ...
 
 
 @overload
@@ -156,8 +142,7 @@ async def get_weather(
     language: Literal[Language.HI],
     *,
     session: Optional[ClientSession] = ...,
-) -> pywttr_models.hi.Model:
-    ...
+) -> pywttr_models.hi.Model: ...
 
 
 @overload
@@ -166,8 +151,7 @@ async def get_weather(
     language: Literal[Language.HU],
     *,
     session: Optional[ClientSession] = ...,
-) -> pywttr_models.hu.Model:
-    ...
+) -> pywttr_models.hu.Model: ...
 
 
 @overload
@@ -176,8 +160,7 @@ async def get_weather(
     language: Literal[Language.IA],
     *,
     session: Optional[ClientSession] = ...,
-) -> pywttr_models.ia.Model:
-    ...
+) -> pywttr_models.ia.Model: ...
 
 
 @overload
@@ -186,8 +169,7 @@ async def get_weather(
     language: Literal[Language.ID],
     *,
     session: Optional[ClientSession] = ...,
-) -> pywttr_models.id.Model:
-    ...
+) -> pywttr_models.id.Model: ...
 
 
 @overload
@@ -196,8 +178,7 @@ async def get_weather(
     language: Literal[Language.IT],
     *,
     session: Optional[ClientSession] = ...,
-) -> pywttr_models.it.Model:
-    ...
+) -> pywttr_models.it.Model: ...
 
 
 @overload
@@ -206,8 +187,7 @@ async def get_weather(
     language: Literal[Language.LT],
     *,
     session: Optional[ClientSession] = ...,
-) -> pywttr_models.lt.Model:
-    ...
+) -> pywttr_models.lt.Model: ...
 
 
 @overload
@@ -216,8 +196,7 @@ async def get_weather(
     language: Literal[Language.MG],
     *,
     session: Optional[ClientSession] = ...,
-) -> pywttr_models.mg.Model:
-    ...
+) -> pywttr_models.mg.Model: ...
 
 
 @overload
@@ -226,8 +205,7 @@ async def get_weather(
     language: Literal[Language.NB],
     *,
     session: Optional[ClientSession] = ...,
-) -> pywttr_models.nb.Model:
-    ...
+) -> pywttr_models.nb.Model: ...
 
 
 @overload
@@ -236,8 +214,7 @@ async def get_weather(
     language: Literal[Language.NL],
     *,
     session: Optional[ClientSession] = ...,
-) -> pywttr_models.nl.Model:
-    ...
+) -> pywttr_models.nl.Model: ...
 
 
 @overload
@@ -246,8 +223,7 @@ async def get_weather(
     language: Literal[Language.OC],
     *,
     session: Optional[ClientSession] = ...,
-) -> pywttr_models.oc.Model:
-    ...
+) -> pywttr_models.oc.Model: ...
 
 
 @overload
@@ -256,8 +232,7 @@ async def get_weather(
     language: Literal[Language.PL],
     *,
     session: Optional[ClientSession] = ...,
-) -> pywttr_models.pl.Model:
-    ...
+) -> pywttr_models.pl.Model: ...
 
 
 @overload
@@ -266,8 +241,7 @@ async def get_weather(
     language: Literal[Language.PT_BR],
     *,
     session: Optional[ClientSession] = ...,
-) -> pywttr_models.pt_br.Model:
-    ...
+) -> pywttr_models.pt_br.Model: ...
 
 
 @overload
@@ -276,8 +250,7 @@ async def get_weather(
     language: Literal[Language.RO],
     *,
     session: Optional[ClientSession] = ...,
-) -> pywttr_models.ro.Model:
-    ...
+) -> pywttr_models.ro.Model: ...
 
 
 @overload
@@ -286,8 +259,7 @@ async def get_weather(
     language: Literal[Language.RU],
     *,
     session: Optional[ClientSession] = ...,
-) -> pywttr_models.ru.Model:
-    ...
+) -> pywttr_models.ru.Model: ...
 
 
 @overload
@@ -296,8 +268,7 @@ async def get_weather(
     language: Literal[Language.TA],
     *,
     session: Optional[ClientSession] = ...,
-) -> pywttr_models.ta.Model:
-    ...
+) -> pywttr_models.ta.Model: ...
 
 
 @overload
@@ -306,8 +277,7 @@ async def get_weather(
     language: Literal[Language.TH],
     *,
     session: Optional[ClientSession] = ...,
-) -> pywttr_models.th.Model:
-    ...
+) -> pywttr_models.th.Model: ...
 
 
 @overload
@@ -316,8 +286,7 @@ async def get_weather(
     language: Literal[Language.TR],
     *,
     session: Optional[ClientSession] = ...,
-) -> pywttr_models.tr.Model:
-    ...
+) -> pywttr_models.tr.Model: ...
 
 
 @overload
@@ -326,8 +295,7 @@ async def get_weather(
     language: Literal[Language.UK],
     *,
     session: Optional[ClientSession] = ...,
-) -> pywttr_models.uk.Model:
-    ...
+) -> pywttr_models.uk.Model: ...
 
 
 @overload
@@ -336,8 +304,7 @@ async def get_weather(
     language: Literal[Language.VI],
     *,
     session: Optional[ClientSession] = ...,
-) -> pywttr_models.vi.Model:
-    ...
+) -> pywttr_models.vi.Model: ...
 
 
 @overload
@@ -346,8 +313,7 @@ async def get_weather(
     language: Literal[Language.ZH_CN],
     *,
     session: Optional[ClientSession] = ...,
-) -> pywttr_models.zh_cn.Model:
-    ...
+) -> pywttr_models.zh_cn.Model: ...
 
 
 @overload
@@ -356,15 +322,13 @@ async def get_weather(
     language: Literal[Language.ZH_TW],
     *,
     session: Optional[ClientSession] = ...,
-) -> pywttr_models.zh_tw.Model:
-    ...
+) -> pywttr_models.zh_tw.Model: ...
 
 
 @overload
 async def get_weather(
     location: str, language: Language, *, session: Optional[ClientSession] = ...
-) -> pywttr_models.AnyModel:
-    ...
+) -> pywttr_models.AnyModel: ...
 
 
 async def get_weather(
