@@ -12,7 +12,7 @@ async def get_json(
     if isinstance(session, ClientSession) and not session.closed:
         response = await fetch(location, language, session)
     else:
-        async with ClientSession() as session:
+        async with ClientSession() as session:  # noqa: PLR1704
             response = await fetch(location, language, session)
     return await response.json()
 
