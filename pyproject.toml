@@ -41,6 +41,7 @@ pydantic = "2.5.1"
 pytest = "7.4.3"
 pytest-asyncio = "0.21.1"
 pytest-cov = "4.1.0"
+pytest-rerunfailures = "13.0"
 ruff = "0.1.6"
 
 [tool.poetry.group.docs]
@@ -88,7 +89,16 @@ warn_required_dynamic_aliases = true
 warn_untyped_fields = true
 
 [tool.pytest.ini_options]
-addopts = ["--strict-config", "--strict-markers"]
+addopts = [
+  "--strict-config",
+  "--strict-markers",
+  "--reruns",
+  "2",
+  "--reruns-delay",
+  "0",
+  "--only-rerun",
+  "aiohttp.client_exceptions.ServerDisconnectedError",
+]
 asyncio_mode = "auto"
 xfail_strict = true
 
