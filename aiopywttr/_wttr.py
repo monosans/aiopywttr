@@ -135,7 +135,7 @@ class Wttr:
             self.location, Language.IA, session=self.session
         )
 
-    async def id(self) -> pywttr_models.id.Model:  # noqa: A003
+    async def id(self) -> pywttr_models.id.Model:
         return await get_weather(
             self.location, Language.ID, session=self.session
         )
