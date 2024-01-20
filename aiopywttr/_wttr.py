@@ -4,7 +4,7 @@ from typing import Optional
 
 import pywttr_models
 from aiohttp import ClientSession
-from pywttr_models._language import Language
+from pywttr_models._language import Language  # noqa: PLC2701
 from typing_extensions import deprecated
 
 from ._get_weather import get_weather
