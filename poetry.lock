@@ -1431,13 +1431,13 @@ files = [
 
 [[package]]
 name = "pywttr-models"
-version = "1.2.3"
+version = "1.2.4"
 description = "Pydantic models and other stuff for pywttr and aiopywttr"
 optional = false
 python-versions = ">=3.8,<4.0"
 files = [
-    {file = "pywttr_models-1.2.3-py3-none-any.whl", hash = "sha256:a79cfe807ea8b5a85fe911e7d0fcb926344c0049973c95016e8e04ef5bf4e267"},
-    {file = "pywttr_models-1.2.3.tar.gz", hash = "sha256:1f3dcc0ed6864e7ff07da919af415e2f3a3428d113a93f42d82c5f603ada7406"},
+    {file = "pywttr_models-1.2.4-py3-none-any.whl", hash = "sha256:22a6edcbc30a4368cdfeb76f0afa33c32094ec8ded847f64c5c57c776b40bd0f"},
+    {file = "pywttr_models-1.2.4.tar.gz", hash = "sha256:772e01b69a259c95975048a7f029270e6eff8e659dfd74f82503baff9d1301ff"},
 ]
 
 [package.dependencies]
