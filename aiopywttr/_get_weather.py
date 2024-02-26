@@ -4,6 +4,7 @@ from typing import Optional
 
 import pywttr_models
 from aiohttp import ClientSession
+from pydantic import ConfigDict, validate_call
 from pywttr_models._language import Language  # noqa: PLC2701
 from typing_extensions import Literal, overload
 
@@ -331,6 +332,7 @@ async def get_weather(
 ) -> pywttr_models.AnyModel: ...
 
 
+@validate_call(config=ConfigDict(arbitrary_types_allowed=True))
 async def get_weather(
     location: str,
     language: Language = Language.EN,
@@ -360,14 +362,7 @@ async def get_weather(
         asyncio.run(main())
         ```
     """
-    try:
-        model = language._model_
-        lang = language._value_
-    except AttributeError as e:
-        msg = (
-            f"Invalid language {language!r}. "
-            "Must be a member of aiopywttr.Language enum."
-        )
-        raise TypeError(msg) from e
-    response = await get_json(location, lang, session)
-    return model.parse_obj(response)
+    response = await get_json(
+        location=location, language=language._value_, session=session
+    )
+    return language._model_.model_validate_json(response)

@@ -21,6 +21,5 @@ async def test_wttr(
 
 async def test_wttr_without_session(location: str) -> None:
     wttr = aiopywttr.Wttr(location)
-    language = aiopywttr.Language.EN
-    model = await getattr(wttr, language._name_.lower())()
-    assert isinstance(model, language._model_)
+    model = await wttr.en()
+    assert isinstance(model, aiopywttr.Language.EN._model_)
