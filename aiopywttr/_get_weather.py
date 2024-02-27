@@ -332,7 +332,7 @@ async def get_weather(
 ) -> pywttr_models.AnyModel: ...
 
 
-@validate_call(config=ConfigDict(arbitrary_types_allowed=True))
+@validate_call(config=ConfigDict(arbitrary_types_allowed=True, strict=True))
 async def get_weather(
     location: str,
     language: Language = Language.EN,
