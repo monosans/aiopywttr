@@ -28,7 +28,8 @@ import pywttr_models as models
 from pywttr_models._language import Language  # noqa: PLC2701
 
 from ._get_weather import get_weather
-from ._wttr import Wttr, WttrClassDeprecationWarning
+from ._wttr import Wttr
+from ._wttr_depr import WttrClassDeprecationWarning
 
 __all__ = (
     "Language",
