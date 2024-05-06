@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import Optional
 
-from aiohttp import ClientResponse, ClientSession
+from aiohttp import ClientResponse, ClientSession, hdrs
 from typing_extensions import Any
 
 
@@ -23,6 +23,7 @@ async def fetch(
     async with session.get(
         f"https://wttr.in/{location}",
         params={"format": "j1", "lang": language},
+        headers={hdrs.ACCEPT: "application/json"},
         raise_for_status=True,
     ) as response:
         await response.read()
