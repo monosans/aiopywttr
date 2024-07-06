@@ -7,13 +7,13 @@ import pytest
 from aiohttp import ClientSession
 
 
-@pytest.fixture()
+@pytest.fixture
 async def http_session() -> AsyncIterator[ClientSession]:
     async with ClientSession() as s:
         yield s
 
 
-@pytest.fixture()
+@pytest.fixture
 def location() -> str:
     return "Paris"
 
