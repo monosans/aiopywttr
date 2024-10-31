@@ -35,16 +35,13 @@ dependencies = [
 urls.documentation = "https://aiopywttr.readthedocs.io"
 urls.repository = "https://github.com/monosans/aiopywttr"
 
-[tool.hatch.build.targets.sdist]
-include = ["aiopywttr"]
-
 [dependency-groups]
 dev = [
   "covdefaults==2.3",
   "mypy[faster-cache]==1.13",
   "pytest==8.3.3",
   "pytest-asyncio==0.24",
-  "pytest-cov==6.0.0",
+  "pytest-cov==6",
   "ruff==0.7.1",
 ]
 docs = [
@@ -53,3 +50,6 @@ docs = [
   "mkdocstrings==0.26.2",
   "mkdocstrings-python==1.12.2",
 ]
+
+[tool.hatch.build.targets.sdist]
+include = ["aiopywttr"]
