@@ -7,7 +7,7 @@ from aiohttp import ClientSession
 from pywttr_models._language import Language  # noqa: PLC2701
 from typing_extensions import deprecated
 
-from ._get_weather import get_weather
+from aiopywttr._get_weather import get_weather
 
 
 class WttrClassDeprecationWarning(DeprecationWarning):
