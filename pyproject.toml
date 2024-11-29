@@ -29,7 +29,7 @@ classifiers = [
 ]
 dependencies = [
   "aiohttp>=3.7",
-  "pywttr-models>=1.2,<2",
+  "pywttr-models>=2,<3",
   "typing-extensions>=4.5",
 ]
 urls.documentation = "https://aiopywttr.readthedocs.io"
