@@ -1,24 +1,37 @@
 """Asynchronous wrapper for wttr.in weather API.
 
 Examples:
-    Prints the average temperature in Paris today:
+    Choose language. First option is preferred because of type safety.
 
     ```python
-    import asyncio
+    language = aiopywttr.Language.ZH_CN
+    language = aiopywttr.Language["ZH_CN"]
+    language = aiopywttr.Language("zh-cn")
+    ```
 
-    import aiopywttr
+    Print the average temperature in Paris today:
 
+    ```python
+    async with aiopywttr.Wttr() as wttr:
+        weather = await wttr.weather("Paris", language=language)
+    print(weather.weather[0].avgtemp_c)
+    ```
 
-    async def main():
-        # Choose language. First option is preferred for typing.
-        language = aiopywttr.Language.ZH_CN
-        language = aiopywttr.Language["ZH_CN"]
-        language = aiopywttr.Language("zh-cn")
-        weather = await aiopywttr.get_weather("Paris", language)
-        print(weather.weather[0].avgtemp_c)
+    Custom aiohttp.ClientSession:
 
+    ```python
+    async with aiohttp.ClientSession() as session:
+        wttr = aiopywttr.Wttr(session=session)
+        ...
+    ```
 
-    asyncio.run(main())
+    Custom base url:
+
+    ```python
+    async with aiopywttr.Wttr(
+        base_url=pydantic.AnyHttpUrl("https://example.com")
+    ) as wttr:
+        ...
     ```
 """
 
@@ -27,13 +40,7 @@ from __future__ import annotations
 import pywttr_models as models
 from pywttr_models._language import Language  # noqa: PLC2701
 
-from aiopywttr._get_weather import get_weather
-from aiopywttr._wttr import Wttr, WttrClassDeprecationWarning
+from aiopywttr._wttr import Wttr
 
-__all__ = (
-    "Language",
-    "Wttr",
-    "WttrClassDeprecationWarning",
-    "get_weather",
-    "models",
-)
+__version__ = "3.0.0"
+__all__ = ("Language", "Wttr", "models")

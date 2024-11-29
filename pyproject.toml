@@ -4,7 +4,6 @@ requires = ["hatchling"]
 
 [project]
 name = "aiopywttr"
-version = "2.3.0"
 description = "Asynchronous wrapper for wttr.in weather API"
 readme = "README.md"
 keywords = ["forecast"]
@@ -27,11 +26,8 @@ classifiers = [
   "Programming Language :: Python :: 3.13",
   "Typing :: Typed",
 ]
-dependencies = [
-  "aiohttp>=3.7",
-  "pywttr-models>=1.2,<2",
-  "typing-extensions>=4.5",
-]
+dynamic = ["version"]
+dependencies = ["aiohttp>=3.7", "pywttr-models>=2,<3", "typing-extensions>=4"]
 urls.documentation = "https://aiopywttr.readthedocs.io"
 urls.repository = "https://github.com/monosans/aiopywttr"
 
@@ -45,6 +41,7 @@ dev = [
   "ruff==0.8.2",
 ]
 docs = [
+  "black==24.10",
   "mkdocs-material==9.5.47",
   "mkdocs-minify-html-plugin==0.2.3",
   "mkdocstrings==0.27",
@@ -53,3 +50,6 @@ docs = [
 
 [tool.hatch.build.targets.sdist]
 include = ["aiopywttr"]
+
+[tool.hatch.version]
+path = "aiopywttr/__init__.py"

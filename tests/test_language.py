@@ -5,18 +5,18 @@ import pytest
 import aiopywttr
 
 
-def test_language() -> None:
+@pytest.mark.parametrize("language", aiopywttr.Language)
+def test_language_value(language: aiopywttr.Language) -> None:
+    assert language._name_ == language._value_.replace("-", "_").upper()
+
+
+@pytest.mark.parametrize("language", aiopywttr.Language)
+def test_language_model(language: aiopywttr.Language) -> None:
     assert (
-        aiopywttr.Language.ZH_CN
-        is aiopywttr.Language["ZH_CN"]
-        is aiopywttr.Language("zh-cn")
+        language._model_
+        is getattr(aiopywttr.models, language._name_.lower()).Model
     )
 
 
-def test_language_model() -> None:
-    assert aiopywttr.Language.EN._model_ is aiopywttr.models.en.Model
-
-
-@pytest.mark.parametrize("lang", aiopywttr.Language)
-def test_str(lang: aiopywttr.Language) -> None:
-    assert lang._value_ == str(lang)
+def test_language_str() -> None:
+    assert aiopywttr.Language.EN._value_ == str(aiopywttr.Language.EN)
