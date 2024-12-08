@@ -5,22 +5,21 @@ from aiohttp import ClientSession
 
 import aiopywttr
 
-pytestmark = pytest.mark.filterwarnings(
-    "ignore::aiopywttr.WttrClassDeprecationWarning"
+
+@pytest.mark.parametrize(
+    "language",
+    [lang for lang in aiopywttr.Language if lang is not aiopywttr.Language.EN],
 )
+async def test_wttr_without_session(language: aiopywttr.Language) -> None:
+    async with aiopywttr.Wttr() as wttr:
+        weather = await wttr.weather("Paris", language=language)
+    assert isinstance(weather, language._model_)
 
 
-@pytest.mark.parametrize("language", aiopywttr.Language)
-async def test_wttr(
-    location: str, language: aiopywttr.Language, http_session: ClientSession
-) -> None:
-    wttr = aiopywttr.Wttr(location, session=http_session)
-    model = await getattr(wttr, language._name_.lower())()
-    assert isinstance(model, language._model_)
-
-
-async def test_wttr_without_session(location: str) -> None:
-    wttr = aiopywttr.Wttr(location)
+async def test_wttr_with_session() -> None:
     language = aiopywttr.Language.EN
-    model = await getattr(wttr, language._name_.lower())()
-    assert isinstance(model, language._model_)
+
+    async with ClientSession() as s:
+        wttr = aiopywttr.Wttr(session=s)
+        weather = await wttr.weather("Paris", language=language)
+    assert isinstance(weather, language._model_)

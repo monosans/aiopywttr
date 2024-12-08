@@ -17,6 +17,14 @@ pip install -U aiopywttr pywttr-models
 
 <https://aiopywttr.readthedocs.io>
 
+## Simple example
+
+```python
+async with aiopywttr.Wttr() as wttr:
+    weather = await wttr.weather("Paris", language=aiopywttr.Language.EN)
+print(weather.weather[0].avgtemp_c)
+```
+
 ## License
 
 [MIT](https://github.com/monosans/aiopywttr/blob/main/LICENSE)

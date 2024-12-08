@@ -38,5 +38,5 @@ repos:
           - orjson
           - aiohttp
           - pytest<9
-          - pywttr-models<2
+          - pywttr-models<3
           - typing-extensions
