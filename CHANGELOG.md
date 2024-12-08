@@ -2,7 +2,7 @@
 
 [Semantic Versioning](https://semver.org/)
 
-## [3.0.0] - 2024-11-29
+## [3.0.0] - 2024-12-08
 
 - New context manager based API focusing on correct and performant HTTP session management.
 - Switch to Pydantic v2. This also improves performance.
