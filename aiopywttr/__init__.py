@@ -17,20 +17,20 @@ Examples:
     print(weather.weather[0].avgtemp_c)
     ```
 
-    Custom aiohttp.ClientSession:
-
-    ```python
-    async with aiohttp.ClientSession() as session:
-        wttr = aiopywttr.Wttr(session=session)
-        ...
-    ```
-
     Custom base url:
 
     ```python
     async with aiopywttr.Wttr(
         base_url=pydantic.AnyHttpUrl("https://example.com")
     ) as wttr:
+        ...
+    ```
+
+    Custom aiohttp.ClientSession:
+
+    ```python
+    async with aiohttp.ClientSession() as session:
+        wttr = aiopywttr.Wttr(session=session)
         ...
     ```
 """
