@@ -2,10 +2,6 @@ site_name: aiopywttr
 repo_url: https://github.com/monosans/aiopywttr
 repo_name: monosans/aiopywttr
 edit_uri: edit/main/docs/
-nav:
-  - index.md
-  - install.md
-  - api.md
 theme:
   name: material
   features:
