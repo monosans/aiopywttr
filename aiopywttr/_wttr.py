@@ -213,7 +213,7 @@ class Wttr:
         self, location: str, /, *, language: Language
     ) -> pywttr_models.AnyModel: ...
 
-    @validate_call
+    @validate_call(config={"arbitrary_types_allowed": True})
     async def weather(
         self, location: str, /, *, language: Language = Language.EN
     ) -> pywttr_models.AnyModel:
