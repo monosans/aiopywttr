@@ -52,12 +52,13 @@ plugins:
             - https://docs.python.org/3/objects.inv
             - https://typing-extensions.readthedocs.io/en/stable/objects.inv
           options:
+            docstring_options:
+              ignore_init_summary: true
             filters:
               - "!^_(?:[^_].*[^_]|_(?:all|doc|format|main|module|new|slots|str)__)$"
             heading_level: 3
             members_order: source
             merge_init_into_class: true
-            modernize_annotations: true
             preload_modules:
               - pywttr_models
             separate_signature: true
