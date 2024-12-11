@@ -3,7 +3,7 @@ from __future__ import annotations
 from typing import Final, Optional
 
 import pywttr_models
-from aiohttp import ClientSession, hdrs
+from aiohttp import ClientSession, ClientTimeout, hdrs
 from pydantic import AnyHttpUrl, validate_call
 from pywttr_models._language import Language  # noqa: PLC2701
 from typing_extensions import Literal, Self, final, overload
@@ -42,7 +42,9 @@ class Wttr:
         Custom aiohttp.ClientSession:
 
         ```python
-        async with aiohttp.ClientSession() as session:
+        async with aiohttp.ClientSession(
+            timeout=aiohttp.ClientTimeout(total=60, connect=5)
+        ) as session:
             wttr = aiopywttr.Wttr(session=session)
             ...
         ```
@@ -248,13 +250,17 @@ class Wttr:
             Custom aiohttp.ClientSession:
 
             ```python
-            async with aiohttp.ClientSession() as session:
+            async with aiohttp.ClientSession(
+                timeout=aiohttp.ClientTimeout(total=60, connect=5)
+            ) as session:
                 wttr = aiopywttr.Wttr(session=session)
                 ...
             ```
         """
         if self._session is None:
-            self._session = ClientSession()
+            self._session = ClientSession(
+                timeout=ClientTimeout(total=60, connect=5)
+            )
         async with self._session.get(
             f"{self._base_url}/{location}",
             params={"format": "j1", "lang": language},

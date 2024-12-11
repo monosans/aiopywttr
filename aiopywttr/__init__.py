@@ -29,7 +29,9 @@ Examples:
     Custom aiohttp.ClientSession:
 
     ```python
-    async with aiohttp.ClientSession() as session:
+    async with aiohttp.ClientSession(
+        timeout=aiohttp.ClientTimeout(total=60, connect=5)
+    ) as session:
         wttr = aiopywttr.Wttr(session=session)
         ...
     ```
