@@ -2,6 +2,10 @@
 
 [Semantic Versioning](https://semver.org/)
 
+## [3.0.1] - 2024-12-12
+
+- Add stricter default request timeout.
+
 ## [3.0.0] - 2024-12-08
 
 - New context manager based API focusing on correct and performant HTTP session management.
