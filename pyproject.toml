@@ -34,9 +34,9 @@ urls.repository = "https://github.com/monosans/aiopywttr"
 [dependency-groups]
 dev = [
   "covdefaults==2.3",
-  "mypy[faster-cache]==1.14.0",
+  "mypy[faster-cache]==1.14",
   "pytest==8.3.4",
-  "pytest-asyncio==0.25.0",
+  "pytest-asyncio==0.25",
   "pytest-cov==6",
   "ruff==0.8.4",
 ]
