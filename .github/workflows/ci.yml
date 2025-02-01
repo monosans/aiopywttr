@@ -44,4 +44,4 @@ jobs:
       - uses: astral-sh/setup-uv@v5
         with:
           enable-cache: true
-      - run: uv run --frozen --python ${{ matrix.python-version }} pytest --show-diff-on-failure
+      - run: uv run --frozen --python ${{ matrix.python-version }} pytest
