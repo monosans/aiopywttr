@@ -52,4 +52,4 @@ docs = [
 include = ["aiopywttr"]
 
 [tool.hatch.version]
-path = "aiopywttr/__init__.py"
+path = "src/aiopywttr/__init__.py"
