@@ -269,8 +269,8 @@ class Wttr:
             headers={hdrs.ACCEPT: "application/json"},
             raise_for_status=True,
         ) as response:
-            await response.read()
-        return language._model_.model_validate_json(await response.text())
+            content = await response.read()
+        return language._model_.model_validate_json(content)
 
     async def close(self) -> None:
         """Close HTTP session."""
