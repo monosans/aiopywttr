@@ -42,7 +42,8 @@ from __future__ import annotations
 import pywttr_models as models
 from pywttr_models._language import Language  # noqa: PLC2701
 
+from importlib.metadata import version as _version
 from aiopywttr._wttr import Wttr
 
-__version__ = "3.0.1"
+__version__ = _version(__name__)
 __all__ = ("Language", "Wttr", "models")
