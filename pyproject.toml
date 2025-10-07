@@ -1,10 +1,9 @@
 [build-system]
-build-backend = "uv_build"
-requires = ["uv-build>=0.8,<0.9"]
+build-backend = "hatchling.build"
+requires = ["hatchling"]
 
 [project]
 name = "aiopywttr"
-version = "3.0.1"
 description = "Asynchronous wrapper for wttr.in weather API"
 readme = "README.md"
 keywords = ["forecast"]
@@ -30,6 +29,7 @@ classifiers = [
   "Programming Language :: Python :: 3.15",
   "Typing :: Typed",
 ]
+dynamic = ["version"]
 dependencies = ["aiohttp>=3.7", "pywttr-models>=2,<3", "typing-extensions>=4"]
 urls.documentation = "https://aiopywttr.readthedocs.io"
 urls.repository = "https://github.com/monosans/aiopywttr"
@@ -51,3 +51,9 @@ docs = [
   "mkdocstrings-python==1.18.2",
   "ruff==0.13.3",
 ]
+
+[tool.hatch.build.targets.sdist]
+only-include = ["src"]
+
+[tool.hatch.version]
+path = "src/aiopywttr/__init__.py"
