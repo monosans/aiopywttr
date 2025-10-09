@@ -2,6 +2,10 @@
 
 [Semantic Versioning](https://semver.org/)
 
+## [3.0.2] - 2025-10-09
+
+- Improve JSON parsing performance.
+
 ## [3.0.1] - 2024-12-12
 
 - Add stricter default request timeout.
