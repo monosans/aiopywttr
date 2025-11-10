@@ -29,7 +29,7 @@ classifiers = [
   "Typing :: Typed",
 ]
 dynamic = ["version"]
-dependencies = ["aiohttp>=3.7", "pywttr-models>=2,<3", "typing-extensions>=4"]
+dependencies = ["aiohttp>=3.8", "pywttr-models>=2,<3", "typing-extensions>=4"]
 urls.documentation = "https://aiopywttr.readthedocs.io"
 urls.repository = "https://github.com/monosans/aiopywttr"
 

@@ -160,7 +160,7 @@ docs = [
 
 [package.metadata]
 requires-dist = [
-    { name = "aiohttp", specifier = ">=3.7" },
+    { name = "aiohttp", specifier = ">=3.8" },
     { name = "pywttr-models", specifier = ">=2,<3" },
     { name = "typing-extensions", specifier = ">=4" },
 ]
