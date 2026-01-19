@@ -1,8 +1,8 @@
 [pytest]
 addopts = [
   "--reruns=2",
-  "--only-rerun=aiohttp.client_exceptions.ClientConnectorError",
-  "--only-rerun=aiohttp.client_exceptions.ConnectionTimeoutError",
+  "--only-rerun=ClientConnectorError",
+  "--only-rerun=ConnectionTimeoutError",
 ]
 asyncio_mode = "auto"
 strict = true
