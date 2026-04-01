@@ -156,6 +156,7 @@ docs = [
     { name = "mkdocs-minify-html-plugin" },
     { name = "mkdocstrings" },
     { name = "mkdocstrings-python" },
+    { name = "properdocs" },
     { name = "ruff" },
 ]
 
@@ -182,6 +183,7 @@ docs = [
     { name = "mkdocs-minify-html-plugin", specifier = "==0.3.10" },
     { name = "mkdocstrings", specifier = "==1.0.3" },
     { name = "mkdocstrings-python", specifier = "==2.0.3" },
+    { name = "properdocs", specifier = "==1.6.7" },
     { name = "ruff", specifier = "==0.15.8" },
 ]
 
