@@ -3,6 +3,7 @@ addopts = [
   "--reruns=9",
   "--reruns-delay=1",
   "--only-rerun=ClientConnectorError",
+  "--only-rerun=ClientResponseError",
   "--only-rerun=ConnectionTimeoutError",
 ]
 asyncio_mode = "auto"
