@@ -2,6 +2,11 @@
 
 [Semantic Versioning](https://semver.org/)
 
+## [3.0.3] - 2026-06-08
+
+- Drop support for Python 3.9.
+- Migrate docs to GitHub Pages.
+
 ## [3.0.2] - 2025-10-09
 
 - Improve JSON parsing performance.
