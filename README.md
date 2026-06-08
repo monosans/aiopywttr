@@ -15,7 +15,7 @@ pip install -U aiopywttr pywttr-models
 
 ## Documentation
 
-<https://aiopywttr.readthedocs.io>
+<https://monosans.github.io/aiopywttr>
 
 ## Simple example
 
