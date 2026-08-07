@@ -1,5 +1,6 @@
 site_name: aiopywttr
 site_url: https://monosans.github.io/aiopywttr
+strict: true
 repo_url: https://github.com/monosans/aiopywttr
 repo_name: monosans/aiopywttr
 edit_uri: edit/main/docs/
