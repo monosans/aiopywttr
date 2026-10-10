@@ -185,7 +185,6 @@ source = { editable = "." }
 dependencies = [
     { name = "aiohttp" },
     { name = "pywttr-models" },
-    { name = "typing-extensions" },
 ]
 
 [package.dev-dependencies]
@@ -210,7 +209,6 @@ docs = [
 requires-dist = [
     { name = "aiohttp", specifier = ">=3.8" },
     { name = "pywttr-models", git = "https://github.com/monosans/pywttr-models?branch=main" },
-    { name = "typing-extensions", specifier = ">=4" },
 ]
 
 [package.metadata.requires-dev]
