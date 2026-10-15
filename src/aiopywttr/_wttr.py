@@ -22,6 +22,8 @@ class Wttr:
 
     Examples:
         ```python
+        import aiopywttr
+
         async with aiopywttr.Wttr() as wttr:
             weather = await wttr.weather("Paris")
         ```
@@ -214,6 +216,8 @@ class Wttr:
 
         Examples:
             ```python
+            import aiopywttr
+
             async with aiopywttr.Wttr() as wttr:
                 weather = await wttr.weather(
                     "Paris", language=aiopywttr.Language.DE

@@ -6,11 +6,11 @@ Every example is a complete script: copy it and run it.
 
 [`Wttr.weather`][aiopywttr.Wttr.weather] returns a [`Model`][aiopywttr.models.base.Model]:
 
-- [`current_condition[0]`][aiopywttr.models.base.CurrentConditionItem]: the weather now.
-- [`weather[0]`, `weather[1]`, `weather[2]`][aiopywttr.models.base.WeatherItem]: today, tomorrow and the day after.
-- [`weather[i].hourly`][aiopywttr.models.base.HourlyItem]: that day in 3-hour steps.
-- [`weather[i].astronomy[0]`][aiopywttr.models.base.AstronomyItem]: sunrise, sunset and the moon.
-- [`nearest_area[0]`][aiopywttr.models.base.NearestAreaItem]: the place wttr.in found.
+- `current_condition[0]`: the weather now ([`CurrentConditionItem`][aiopywttr.models.base.CurrentConditionItem]).
+- `weather[0]` to `weather[2]`: today, tomorrow and the day after ([`WeatherItem`][aiopywttr.models.base.WeatherItem]).
+- `weather[i].hourly`: that day in 3-hour steps ([`HourlyItem`][aiopywttr.models.base.HourlyItem]).
+- `weather[i].astronomy[0]`: sunrise, sunset and the moon ([`AstronomyItem`][aiopywttr.models.base.AstronomyItem]).
+- `nearest_area[0]`: the place wttr.in found ([`NearestAreaItem`][aiopywttr.models.base.NearestAreaItem]).
 
 Most values come in metric and imperial units, e.g. `temp_c` and `temp_f`.
 
@@ -153,7 +153,7 @@ asyncio.run(main())
 
 !!! warning
 
-    [`Wttr.close`][aiopywttr.Wttr.close], and so leaving `async with aiopywttr.Wttr(...)`, closes the session you passed.
+    [`Wttr.close`][aiopywttr.Wttr.close] closes the session you passed, and leaving `async with aiopywttr.Wttr(...)` calls it.
 
 ## Self-hosted wttr.in
 
