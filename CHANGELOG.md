@@ -2,6 +2,10 @@
 
 [Semantic Versioning](https://semver.org/)
 
+## [3.0.7] - 2026-10-15
+
+- The examples in the `Wttr` and `Wttr.weather` docstrings run as written: they now wrap `async with` in `asyncio.run`.
+
 ## [3.0.6] - 2026-10-15
 
 - New documentation at <https://monosans.github.io/aiopywttr>: a guide with an example for each task and an API reference that describes every response field with its unit.
