@@ -2,6 +2,11 @@
 
 [Semantic Versioning](https://semver.org/)
 
+## [3.0.6] - 2026-10-15
+
+- New documentation at <https://monosans.github.io/aiopywttr>: a guide with an example for each task and an API reference that describes every response field with its unit.
+- Shorter docstrings that describe every argument, the error raised for an unknown location, and that `close()` also closes a session you passed.
+
 ## [3.0.5] - 2026-10-15
 
 - Upload [PEP 740](https://peps.python.org/pep-0740/) attestations to PyPI, so you can verify that the distributions were published from the GitHub Actions workflow of this repository.
