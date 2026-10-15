@@ -126,7 +126,7 @@ async def main() -> None:
 asyncio.run(main())
 ```
 
-If the language is only known at runtime, e.g. `aiopywttr.Language("fr")`, read `lang_xx`: every model has it.
+If the language is only known at runtime, e.g. `aiopywttr.Language("fr")`, read [`lang_xx`](api.md#response-models): every language has it.
 
 ## Custom HTTP client and timeouts
 
@@ -157,7 +157,7 @@ asyncio.run(main())
 
 ## Self-hosted wttr.in
 
-Point `base_url` at your own [wttr.in server](https://github.com/chubin/wttr.in).
+Point `base_url` at your own [wttr.in server](https://github.com/chubin/wttr.in#installation).
 
 ```python
 import asyncio
