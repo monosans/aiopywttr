@@ -1,4 +1,4 @@
-# aiopywttr
+# <img src="https://raw.githubusercontent.com/monosans/aiopywttr/main/docs/assets/logo.svg" alt="" width="40" align="top"> aiopywttr
 
 [![Downloads](https://static.pepy.tech/badge/aiopywttr)](https://pepy.tech/project/aiopywttr)
 
