@@ -23,6 +23,8 @@
 
 ## Response models
 
+Each language has its own module, such as `aiopywttr.models.fr`. Its models add one field with the translated description, such as `lang_fr`; everything else is shared and listed below.
+
 ::: aiopywttr.models
     options:
       heading_level: 3

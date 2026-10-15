@@ -38,4 +38,4 @@ asyncio.run(main())
 ## Next steps
 
 - [Guide](guide.md): current weather, forecasts, languages, timeouts, errors.
-- [API reference](api.md): every class, method and response field.
+- [API reference](api.md): every class and method, and the response fields shared by all languages.
