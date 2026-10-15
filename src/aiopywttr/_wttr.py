@@ -22,10 +22,17 @@ class Wttr:
 
     Examples:
         ```python
+        import asyncio
+
         import aiopywttr
 
-        async with aiopywttr.Wttr() as wttr:
-            weather = await wttr.weather("Paris")
+
+        async def main() -> None:
+            async with aiopywttr.Wttr() as wttr:
+                weather = await wttr.weather("Paris")
+
+
+        asyncio.run(main())
         ```
     """
 
@@ -216,13 +223,20 @@ class Wttr:
 
         Examples:
             ```python
+            import asyncio
+
             import aiopywttr
 
-            async with aiopywttr.Wttr() as wttr:
-                weather = await wttr.weather(
-                    "Paris", language=aiopywttr.Language.DE
-                )
-            print(weather.current_condition[0].lang_de[0].value)
+
+            async def main() -> None:
+                async with aiopywttr.Wttr() as wttr:
+                    weather = await wttr.weather(
+                        "Paris", language=aiopywttr.Language.DE
+                    )
+                print(weather.current_condition[0].lang_de[0].value)
+
+
+            asyncio.run(main())
             ```
         """
         if self._session is None:
