@@ -1,39 +1,19 @@
-"""Asynchronous wrapper for wttr.in weather API.
+"""Asynchronous wrapper for the [wttr.in](https://wttr.in) weather API.
 
 Examples:
-    Choose language. First option is preferred because of type safety.
-
     ```python
-    language = aiopywttr.Language.ZH_CN
-    language = aiopywttr.Language["ZH_CN"]
-    language = aiopywttr.Language("zh-cn")
-    ```
+    import asyncio
 
-    Print the average temperature in Paris today:
+    import aiopywttr
 
-    ```python
-    async with aiopywttr.Wttr() as wttr:
-        weather = await wttr.weather("Paris", language=language)
-    print(weather.weather[0].avgtemp_c)
-    ```
 
-    Custom base url:
+    async def main() -> None:
+        async with aiopywttr.Wttr() as wttr:
+            weather = await wttr.weather("Paris")
+        print(weather.current_condition[0].temp_c)
 
-    ```python
-    async with aiopywttr.Wttr(
-        base_url=pydantic.AnyHttpUrl("https://example.com")
-    ) as wttr:
-        ...
-    ```
 
-    Custom aiohttp.ClientSession:
-
-    ```python
-    async with aiohttp.ClientSession(
-        timeout=aiohttp.ClientTimeout(total=60, connect=5)
-    ) as session:
-        wttr = aiopywttr.Wttr(session=session)
-        ...
+    asyncio.run(main())
     ```
 """
 
