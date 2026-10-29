@@ -36,7 +36,6 @@ dev = [
   "pytest==9.1.1",
   "pytest-asyncio==1.4.1",
   "pytest-cov==7.1.0",
-  "pytest-github-actions-annotate-failures==0.4.2",
   "pytest-rerunfailures==16.7",
   "ruff==0.17.2",
 ]
@@ -45,6 +44,12 @@ docs = [
   "mkdocstrings-python==2.0.10",
   "ruff==0.17.2",
   "zensical==0.0.73",
+]
+test = [
+  "pytest==9.1.1",
+  "pytest-asyncio==1.4.1",
+  "pytest-github-actions-annotate-failures==0.4.2",
+  "pytest-rerunfailures==16.7",
 ]
 
 [build-system]
