@@ -44,7 +44,7 @@ docs = [
   "zensical==0.0.73",
 ]
 test = [
-  "pytest==9.1.1",
+  "pytest==9.2.0",
   "pytest-asyncio==1.4.1",
   "pytest-rerunfailures==16.7",
 ]
