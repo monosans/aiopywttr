@@ -1,0 +1,14 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 📖 Documentation
+    url: https://monosans.github.io/aiopywttr
+    about: Guide and API reference for aiopywttr.
+  - name: 🌦 Problem with wttr.in itself
+    url: https://github.com/chubin/wttr.in/issues
+    about: >-
+      Wrong forecasts, outages and missing locations belong in the wttr.in
+      tracker.
+  - name: 🔒 Report a security vulnerability
+    url: >-
+      https://github.com/monosans/aiopywttr/security/advisories/new
+    about: Report it privately instead of opening a public issue.
