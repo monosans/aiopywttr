@@ -1655,7 +1655,7 @@ wheels = [
 [[package]]
 name = "pywttr-models"
 version = "2.0.10"
-source = { git = "https://github.com/monosans/pywttr-models?branch=main#2a029290fe0856ed2a2d8df36d6f090ba1d46483" }
+source = { git = "https://github.com/monosans/pywttr-models?branch=main#941392f44a8d7c1fe7b0bf41e42fa9890648fb0e" }
 dependencies = [
     { name = "pydantic" },
     { name = "typing-extensions", marker = "python_full_version < '3.13'" },
