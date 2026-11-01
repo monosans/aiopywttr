@@ -42,7 +42,7 @@ repos:
           - --scripts-are-modules
         additional_dependencies:
           - aiohttp==3.14.5
-          - pydantic==2.14.1
+          - pydantic==2.14.2
           - pytest==9.2.0
           - pywttr-models==2.0.10
   - repo: https://github.com/zizmorcore/zizmor-pre-commit
