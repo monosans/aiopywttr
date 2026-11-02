@@ -201,9 +201,7 @@ class Wttr:
         self, location: str, /, *, language: Literal[Language.ZH_TW]
     ) -> pywttr_models.zh_tw.Model: ...
     @overload
-    async def weather(
-        self, location: str, /, *, language: Language
-    ) -> pywttr_models.AnyModel: ...
+    async def weather(self, location: str, /, *, language: Language) -> pywttr_models.AnyModel: ...
 
     @validate_call(config={"arbitrary_types_allowed": True})
     async def weather(
@@ -230,9 +228,7 @@ class Wttr:
 
             async def main() -> None:
                 async with aiopywttr.Wttr() as wttr:
-                    weather = await wttr.weather(
-                        "Paris", language=aiopywttr.Language.DE
-                    )
+                    weather = await wttr.weather("Paris", language=aiopywttr.Language.DE)
                 print(weather.current_condition[0].lang_de[0].value)
 
 
@@ -240,9 +236,7 @@ class Wttr:
             ```
         """
         if self._session is None:
-            self._session = ClientSession(
-                timeout=ClientTimeout(total=60, connect=5)
-            )
+            self._session = ClientSession(timeout=ClientTimeout(total=60, connect=5))
         async with self._session.get(
             f"{self._base_url}/{location}",
             params={"format": "j1", "lang": language},

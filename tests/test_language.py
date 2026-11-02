@@ -12,10 +12,7 @@ def test_language_value(language: aiopywttr.Language) -> None:
 
 @pytest.mark.parametrize("language", aiopywttr.Language)
 def test_language_model(language: aiopywttr.Language) -> None:
-    assert (
-        language._model_
-        is getattr(aiopywttr.models, language._name_.lower()).Model
-    )
+    assert language._model_ is getattr(aiopywttr.models, language._name_.lower()).Model
 
 
 def test_language_str() -> None:
