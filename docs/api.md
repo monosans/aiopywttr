@@ -1,7 +1,5 @@
 # API reference
 
-<!-- prettier-ignore-start -->
-
 ::: aiopywttr.Wttr
     options:
       members:
@@ -53,5 +51,3 @@ Each language has its own module, such as `aiopywttr.models.fr`. Its `CurrentCon
       heading_level: 3
       show_attribute_values: false
       show_labels: false
-
-<!-- prettier-ignore-end -->
