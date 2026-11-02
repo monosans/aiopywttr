@@ -7,8 +7,7 @@ import aiopywttr
 
 
 @pytest.mark.parametrize(
-    "language",
-    [lang for lang in aiopywttr.Language if lang is not aiopywttr.Language.EN],
+    "language", [lang for lang in aiopywttr.Language if lang is not aiopywttr.Language.EN]
 )
 async def test_wttr_without_session(language: aiopywttr.Language) -> None:
     async with aiopywttr.Wttr() as wttr:
