@@ -6,5 +6,8 @@ addopts = [
   "--only-rerun=ClientResponseError",
   "--only-rerun=ConnectionTimeoutError",
 ]
+asyncio_default_fixture_loop_scope = "function"
 asyncio_mode = "auto"
+empty_parameter_set_mark = "fail_at_collect"
+filterwarnings = ["error"]
 strict = true
