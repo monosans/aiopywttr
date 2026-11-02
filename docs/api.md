@@ -1,6 +1,6 @@
 # API reference
 
-<!-- prettier-ignore-start -->
+<!-- oxfmt-ignore-start -->
 
 ::: aiopywttr.Wttr
     options:
@@ -54,4 +54,4 @@ Each language has its own module, such as `aiopywttr.models.fr`. Its `CurrentCon
       show_attribute_values: false
       show_labels: false
 
-<!-- prettier-ignore-end -->
+<!-- oxfmt-ignore-end -->
