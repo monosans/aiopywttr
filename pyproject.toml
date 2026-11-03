@@ -47,6 +47,7 @@ test = [
   "pytest==9.2.0",
   "pytest-asyncio==1.4.1",
   "pytest-rerunfailures==16.7",
+  "pytest-xdist==3.8",
 ]
 test-ci = [
   "pytest-github-actions-annotate-failures==0.4.2",
