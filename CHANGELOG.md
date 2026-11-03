@@ -2,6 +2,10 @@
 
 [Semantic Versioning](https://semver.org/)
 
+## [3.1.0] - 2026-11-04
+
+- Support all 76 languages wttr.in has. pywttr-models 2.1.0, now required, adds the 41 that were missing, such as `Language.ES` (Spanish), `Language.JA` (Japanese) and `Language.PT` (Portuguese). wttr.in translates most of them only in part, and gives untranslated descriptions in English. Each one has a `weather()` overload, so type checkers know its model.
+
 ## [3.0.8] - 2026-11-03
 
 - With the default base URL, requests go to `https://wttr.in/<location>` again instead of `https://wttr.in//<location>`, which wttr.in answered with a redirect. This saves a round trip on every request.
