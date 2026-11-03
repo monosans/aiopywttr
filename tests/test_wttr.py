@@ -26,6 +26,19 @@ async def test_wttr_with_session() -> None:
     assert isinstance(weather, language._model_)
 
 
+async def test_wttr_english_descriptions() -> None:
+    """wttr.in sends no `lang_en` or `lang_xx` for English, so both give `weather_desc`."""
+    async with aiopywttr.Wttr() as wttr:
+        weather = await wttr.weather("Paris", language=aiopywttr.Language.EN)
+    assert weather.current_condition
+    for current in weather.current_condition:
+        assert current.lang_en == current.lang_xx == current.weather_desc
+    hours = [hour for day in weather.weather for hour in day.hourly]
+    assert hours
+    for hour in hours:
+        assert hour.lang_en == hour.lang_xx == hour.weather_desc
+
+
 def test_wttr_base_url_default() -> None:
     assert aiopywttr.Wttr().base_url == AnyHttpUrl("https://wttr.in")
 
