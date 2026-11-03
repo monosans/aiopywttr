@@ -2,6 +2,11 @@
 
 [Semantic Versioning](https://semver.org/)
 
+## [3.0.8] - 2026-11-03
+
+- With the default base URL, requests go to `https://wttr.in/<location>` again instead of `https://wttr.in//<location>`, which wttr.in answered with a redirect. This saves a round trip on every request.
+- Declare pydantic as a dependency, since aiopywttr imports it directly.
+
 ## [3.0.7] - 2026-10-15
 
 - The examples in the `Wttr` and `Wttr.weather` docstrings run as written: they now wrap `async with` in `asyncio.run`.
