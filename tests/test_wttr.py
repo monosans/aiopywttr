@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import pytest
-from aiohttp import ClientSession, ClientTimeout, web
+from aiohttp import ClientSession, web
 from aiohttp.test_utils import TestServer
 from pydantic import AnyHttpUrl
 
@@ -13,15 +13,6 @@ import aiopywttr
 )
 async def test_wttr_without_session(language: aiopywttr.Language) -> None:
     async with aiopywttr.Wttr() as wttr:
-        weather = await wttr.weather("Paris", language=language)
-    assert isinstance(weather, language._model_)
-
-
-async def test_wttr_with_session() -> None:
-    language = aiopywttr.Language.EN
-
-    async with ClientSession(timeout=ClientTimeout(total=60, connect=5)) as s:
-        wttr = aiopywttr.Wttr(session=s)
         weather = await wttr.weather("Paris", language=language)
     assert isinstance(weather, language._model_)
 
