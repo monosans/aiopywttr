@@ -238,7 +238,7 @@ class Wttr:
         if self._session is None:
             self._session = ClientSession(timeout=ClientTimeout(total=60, connect=5))
         async with self._session.get(
-            f"{self._base_url}/{location}",
+            f"{str(self._base_url).rstrip('/')}/{location}",
             params={"format": "j1", "lang": language},
             headers={hdrs.ACCEPT: "application/json"},
             raise_for_status=True,

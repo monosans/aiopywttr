@@ -1,7 +1,8 @@
 from __future__ import annotations
 
 import pytest
-from aiohttp import ClientSession, ClientTimeout
+from aiohttp import ClientSession, ClientTimeout, web
+from aiohttp.test_utils import TestServer
 from pydantic import AnyHttpUrl
 
 import aiopywttr
@@ -46,3 +47,31 @@ async def test_wttr_close_closes_passed_session() -> None:
     async with aiopywttr.Wttr(session=session) as wttr:
         assert wttr.session is session
     assert session.closed
+
+
+@pytest.mark.parametrize(
+    ("path", "expected"),
+    [
+        ("", "/Paris?format=j1&lang=de"),
+        ("/wttr", "/wttr/Paris?format=j1&lang=de"),
+        ("/wttr/", "/wttr/Paris?format=j1&lang=de"),
+    ],
+)
+async def test_wttr_request_url(path: str, expected: str) -> None:
+    requests: list[web.Request] = []
+
+    async def handler(request: web.Request) -> web.Response:  # noqa: RUF029
+        requests.append(request)
+        return web.json_response({
+            "current_condition": [],
+            "nearest_area": [],
+            "request": [],
+            "weather": [],
+        })
+
+    app = web.Application()
+    app.router.add_get("/{tail:.*}", handler)
+    async with TestServer(app) as server, ClientSession() as session:
+        wttr = aiopywttr.Wttr(base_url=AnyHttpUrl(str(server.make_url(path))), session=session)
+        await wttr.weather("Paris", language=aiopywttr.Language.DE)
+    assert [request.path_qs for request in requests] == [expected]
