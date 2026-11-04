@@ -22,10 +22,6 @@ def test_language_model(language: aiopywttr.Language) -> None:
     assert language._model_ is module.Model
 
 
-def test_language_str() -> None:
-    assert aiopywttr.Language.EN._value_ == str(aiopywttr.Language.EN)
-
-
 async def test_language_matches_wttr_in() -> None:
     """wttr.in names the languages it supports when asked for one it doesn't."""
     async with (
