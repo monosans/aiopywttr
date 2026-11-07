@@ -1,9 +1,14 @@
 from __future__ import annotations
 
+import inspect
+import subprocess
+import sys
+import textwrap
+
 import pytest
 from aiohttp import ClientSession, web
 from aiohttp.test_utils import TestServer
-from pydantic import AnyHttpUrl
+from pydantic import AnyHttpUrl, ValidationError
 
 import aiopywttr
 
@@ -79,3 +84,58 @@ async def test_wttr_request_url(path: str, expected: str) -> None:
         wttr = aiopywttr.Wttr(base_url=AnyHttpUrl(str(server.make_url(path))), session=session)
         await wttr.weather("Paris", language=aiopywttr.Language.DE)
     assert [request.path_qs for request in requests] == [expected]
+
+
+def test_weather_keeps_its_signature() -> None:
+    signature = inspect.signature(aiopywttr.Wttr.weather)
+    assert list(signature.parameters) == ["self", "location", "language"]
+    assert signature.parameters["language"].default is aiopywttr.Language.EN
+    assert signature.return_annotation == "pywttr_models.AnyModel"
+    assert inspect.iscoroutinefunction(aiopywttr.Wttr.weather)
+
+
+@pytest.mark.parametrize(
+    ("location", "language"), [(1, aiopywttr.Language.DE), ("Paris", "not-a-language")]
+)
+async def test_weather_validates_its_arguments(location: object, language: object) -> None:
+    wttr = aiopywttr.Wttr()
+    with pytest.raises(ValidationError, match=r"validation error for Wttr\.weather"):
+        await wttr.weather(location, language=language)  # type: ignore[call-overload]
+    # The session is created just before the request, so none was sent.
+    assert wttr.session is None
+
+
+def test_import_leaves_the_return_type_of_weather_unevaluated() -> None:
+    """Evaluating `pywttr_models.AnyModel` would import every language's models."""
+    code = (
+        "import pywttr_models\n"
+        "vars(pywttr_models).pop('AnyModel', None)\n"
+        "def __getattr__(name):\n"
+        "    raise AttributeError(name)\n"
+        "pywttr_models.__getattr__ = __getattr__\n"
+        "import aiopywttr\n"
+    )
+    subprocess.run((sys.executable, "-c", code), check=True)  # noqa: S603
+
+
+def test_only_the_language_asked_for_is_loaded() -> None:
+    """Runs in a process of its own, as conftest.py loads every language."""
+    code = textwrap.dedent("""
+        import sys
+
+        import aiopywttr
+
+        def loaded(*, languages_only):
+            names = {name for name in sys.modules if name.startswith("pywttr_models.")}
+            if languages_only:
+                names = {name for name in names if not name.startswith("pywttr_models._")}
+                names.discard("pywttr_models.base")
+            return names
+
+        names = loaded(languages_only=False)
+        assert names <= {"pywttr_models._language"}, names
+        assert aiopywttr.Language.DE._model_.__module__ == "pywttr_models.de"
+        names = loaded(languages_only=True)
+        assert names == {"pywttr_models.de"}, names
+    """)
+    subprocess.run((sys.executable, "-c", code), check=True)  # noqa: S603

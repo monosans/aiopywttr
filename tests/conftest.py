@@ -7,6 +7,11 @@ import pytest
 
 import aiopywttr
 
+# pywttr_models imports a language's models when it is first used, so they
+# are all loaded here, for the fixture to forbid extra fields in each.
+for _language in aiopywttr.Language:
+    _ = _language._model_
+
 
 def _get_models(
     cls: type[pydantic.BaseModel] = pydantic.BaseModel, /
