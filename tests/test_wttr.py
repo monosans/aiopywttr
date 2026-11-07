@@ -3,6 +3,7 @@ from __future__ import annotations
 import inspect
 import subprocess
 import sys
+import textwrap
 
 import pytest
 from aiohttp import ClientSession, web
@@ -117,13 +118,24 @@ def test_import_leaves_the_return_type_of_weather_unevaluated() -> None:
     subprocess.run((sys.executable, "-c", code), check=True)  # noqa: S603
 
 
-def test_import_loads_no_language_models() -> None:
-    code = (
-        "import sys\n"
-        "import aiopywttr\n"
-        "print(*sorted(name for name in sys.modules if name.startswith('pywttr_models.')))\n"
-    )
-    done = subprocess.run(  # noqa: S603
-        (sys.executable, "-c", code), capture_output=True, check=True, text=True
-    )
-    assert set(done.stdout.split()) <= {"pywttr_models._language"}
+def test_only_the_language_asked_for_is_loaded() -> None:
+    """Runs in a process of its own, as conftest.py loads every language."""
+    code = textwrap.dedent("""
+        import sys
+
+        import aiopywttr
+
+        def loaded(*, languages_only):
+            names = {name for name in sys.modules if name.startswith("pywttr_models.")}
+            if languages_only:
+                names = {name for name in names if not name.startswith("pywttr_models._")}
+                names.discard("pywttr_models.base")
+            return names
+
+        names = loaded(languages_only=False)
+        assert names <= {"pywttr_models._language"}, names
+        assert aiopywttr.Language.DE._model_.__module__ == "pywttr_models.de"
+        names = loaded(languages_only=True)
+        assert names == {"pywttr_models.de"}, names
+    """)
+    subprocess.run((sys.executable, "-c", code), check=True)  # noqa: S603
