@@ -1,5 +1,8 @@
 from __future__ import annotations
 
+import subprocess
+import sys
+
 import pytest
 from aiohttp import ClientSession, web
 from aiohttp.test_utils import TestServer
@@ -79,3 +82,16 @@ async def test_wttr_request_url(path: str, expected: str) -> None:
         wttr = aiopywttr.Wttr(base_url=AnyHttpUrl(str(server.make_url(path))), session=session)
         await wttr.weather("Paris", language=aiopywttr.Language.DE)
     assert [request.path_qs for request in requests] == [expected]
+
+
+def test_import_leaves_the_return_type_of_weather_unevaluated() -> None:
+    """Evaluating `pywttr_models.AnyModel` would import every language's models."""
+    code = (
+        "import pywttr_models\n"
+        "vars(pywttr_models).pop('AnyModel', None)\n"
+        "def __getattr__(name):\n"
+        "    raise AttributeError(name)\n"
+        "pywttr_models.__getattr__ = __getattr__\n"
+        "import aiopywttr\n"
+    )
+    subprocess.run((sys.executable, "-c", code), check=True)  # noqa: S603
