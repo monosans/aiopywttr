@@ -134,8 +134,9 @@ def test_only_the_language_asked_for_is_loaded() -> None:
 
         names = loaded(languages_only=False)
         assert names <= {"pywttr_models._language"}, names
-        assert aiopywttr.Language.DE._model_.__module__ == "pywttr_models.de"
+        model = aiopywttr.Language.DE._model_
         names = loaded(languages_only=True)
         assert names == {"pywttr_models.de"}, names
+        assert model is sys.modules["pywttr_models.de"].Model
     """)
     subprocess.run((sys.executable, "-c", code), check=True)  # noqa: S603

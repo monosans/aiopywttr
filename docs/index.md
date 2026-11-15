@@ -1,3 +1,7 @@
+---
+title: Async Python client for the wttr.in weather API
+---
+
 # aiopywttr
 
 Typed asyncio client for the [wttr.in](https://wttr.in) weather API. Without asyncio, use [pywttr](https://monosans.github.io/pywttr).
@@ -15,6 +19,8 @@ Typed asyncio client for the [wttr.in](https://wttr.in) weather API. Without asy
     ```bash
     pip install -U aiopywttr pywttr-models
     ```
+
+pywttr-models holds the response models and gets its own releases when wttr.in changes its responses. Naming it keeps `pip install -U` upgrading it along with aiopywttr.
 
 ## Quick start
 

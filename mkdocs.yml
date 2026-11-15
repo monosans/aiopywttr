@@ -1,5 +1,6 @@
 site_name: aiopywttr
 site_url: https://monosans.github.io/aiopywttr
+site_description: Typed asyncio Python client for the wttr.in weather API
 strict: true
 repo_url: https://github.com/monosans/aiopywttr
 repo_name: monosans/aiopywttr
