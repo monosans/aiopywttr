@@ -1,3 +1,7 @@
+---
+title: Async Python client for the wttr.in weather API
+---
+
 # aiopywttr
 
 Typed asyncio client for the [wttr.in](https://wttr.in) weather API. Without asyncio, use [pywttr](https://monosans.github.io/pywttr).
