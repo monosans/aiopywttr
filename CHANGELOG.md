@@ -2,6 +2,10 @@
 
 [Semantic Versioning](https://semver.org/)
 
+## [3.1.4] - 2026-11-15
+
+- Require pydantic 2.5 and aiohttp 3.8 or newer. 3.1.3 asked for pydantic 2.10 and aiohttp 3.12.4, more than aiopywttr needs. Before pydantic 2.5, `aiopywttr.Wttr()` fails with `AttributeError`, because `validate_call` can't wrap `__init__` of a class with `__slots__`.
+
 ## [3.1.3] - 2026-11-15
 
 - Require pydantic 2.10 or newer. Older versions don't work: with 2.0 aiopywttr doesn't import, from 2.4 to 2.7.1 the response models don't load once typing-extensions 4.12 or newer is installed, and up to 2.9 `inspect.iscoroutinefunction(Wttr.weather)` is `False` and a validation error of `Wttr.weather` is titled "weather" instead of "Wttr.weather".
